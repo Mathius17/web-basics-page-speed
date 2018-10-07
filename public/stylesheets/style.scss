@@ -22,12 +22,17 @@ a {
     padding-right: 0.5rem;
     padding-bottom: 0.5rem;
 
-    // Tablets & small desktops
+    // Desktops
     @media (min-width: 769px) {
+      flex: 0 1 50%;
+    }
+
+    // Desktops
+    @media (min-width: 1024px) {
       flex: 0 1 33.333%;
     }
 
-    // Tablets & small desktops
+    // Widescreen
     @media (min-width: 1216px) {
       flex: 0 1 25%;
     }
