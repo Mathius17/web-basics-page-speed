@@ -1,1 +1,5 @@
 node_modules/
+
+# Generated CSS
+public/stylesheets/style.css
+public/stylesheets/style.css.map
