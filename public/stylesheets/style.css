@@ -12,10 +12,16 @@ a {
   flex-wrap: wrap; }
 
 .flex-item {
-  flex: 1 1 33.333%;
+  flex: 1;
   max-height: 300px;
   padding-right: 0.5rem;
   padding-bottom: 0.5rem; }
+  @media (min-width: 769px) {
+    .flex-item {
+      flex: 0 1 33.333%; } }
+  @media (min-width: 1216px) {
+    .flex-item {
+      flex: 0 1 25%; } }
   .flex-item img {
     height: 100%;
     width: fit-content;
