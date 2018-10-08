@@ -12,7 +12,9 @@ require('dotenv').load();
 
 var app = require('../app');
 var debug = require('debug')('web-basics-page-speed:server');
-var http = require('http');
+var spdy = require('spdy');
+var path = require('path');
+var fs = require('fs');
 
 /**
  * Get port from environment and store in Express.
@@ -22,10 +24,19 @@ var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
+ * Obtains key and certificate necessary for SSL encryption
+ */
+
+var certOptions = {
+  key: fs.readFileSync(path.resolve(process.env.SERVER_KEY)),
+  cert: fs.readFileSync(path.resolve(process.env.SERVER_CERTIFICATE))
+}
+
+/**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = spdy.createServer(certOptions, app);
 
 /**
  * Listen on provided port, on all network interfaces.
