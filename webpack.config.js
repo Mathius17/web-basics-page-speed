@@ -1,14 +1,28 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/js/index.js',
   mode: 'production',
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'public/javascripts')
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'public/dist')
+  },
+  module: {
+    rules: [{
+      test: /\.scss$/,
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: [
+          'css-loader',
+          'sass-loader'
+        ]
+      })
+    }]
   },
   plugins: [
-    new CleanWebpackPlugin(['public/javascripts']),
+    new CleanWebpackPlugin(['public/dist']),
+    new ExtractTextPlugin('bundle.css'),
   ]
 };
