@@ -4,13 +4,18 @@
     <title>Web basics</title>
 
     {# --- Stylesheets --- #}
-    <link rel='stylesheet' href='/stylesheets/bulma-0.7.1/css/bulma.css' />
+    <link rel='stylesheet' href='/stylesheets/bulma-0.7.1/css/bulma.min.css' />
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
     {# --- Scripts --- #}
-    <script src="/javascripts/jquery.js"></script>
-    <script src="/javascripts/lodash.js"></script>
-    <script src="/javascripts/moment.js"></script>
+    {# defer: for files that need to be executed in order #}
+    <script src="/javascripts/jquery.min.js" defer></script>
+    <script src="/javascripts/lodash.min.js" defer></script>
+
+    {# async: for files that execute immediately when they arrive
+      (non dependant on each other)
+    #}
+    <script src="/javascripts/moment.min.js" async></script>
   </head>
   <body class="has-navbar-fixed-top">
     {% include 'navbar.njk' %}

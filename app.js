@@ -30,7 +30,8 @@ app.use(cookieParser());
 app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
-  sourceMap: true
+  sourceMap: true,
+  outputStyle: 'compressed'
 }));
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: '30d' }));
 
