@@ -17,10 +17,25 @@ a {
   }
 
   &-item {
-    flex: 1 1 33.333%;
+    flex: 1 1 100%;
     max-height: 300px;
     padding-right: 0.5rem;
     padding-bottom: 0.5rem;
+
+    // Desktops
+    @media (min-width: 769px) {
+      flex: 0 1 50%;
+    }
+
+    // Desktops
+    @media (min-width: 1024px) {
+      flex: 0 1 33.333%;
+    }
+
+    // Widescreen
+    @media (min-width: 1216px) {
+      flex: 0 1 25%;
+    }
 
     img {
       height: 100%;
