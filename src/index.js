@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { join } from 'lodash';
 import { square } from './math.js';
 
 function component(text) {
@@ -10,7 +10,7 @@ function component(text) {
 }
 
 function stringComponent() {
-  const text = _.join(['Hello', 'webpack'], ' ');
+  const text = join(['Hello', 'webpack'], ' ');
 
   return component(text);
 }
