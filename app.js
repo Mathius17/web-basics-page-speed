@@ -32,7 +32,7 @@ app.use(sassMiddleware({
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: '30d' }));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
