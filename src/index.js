@@ -1,0 +1,25 @@
+import _ from 'lodash';
+import { square } from './math.js';
+
+function component(text) {
+  let element = document.createElement('div');
+
+  element.innerHTML = text;
+
+  return element;
+}
+
+function stringComponent() {
+  const text = _.join(['Hello', 'webpack'], ' ');
+
+  return component(text);
+}
+
+function mathComponent(number) {
+  const text = `${number} al cuadrado es igual a ${square(number)}`;
+
+  return component(text);
+}
+
+document.body.appendChild(stringComponent());
+document.body.appendChild(mathComponent(5));
