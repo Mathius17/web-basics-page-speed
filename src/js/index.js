@@ -1,6 +1,6 @@
 require('../scss/index.scss');
 
-import { join } from 'lodash-es';
+import { join } from 'lodash';
 import { square } from './math';
 
 function component(text) {
